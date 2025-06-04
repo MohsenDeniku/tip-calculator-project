@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Space Mono", monospace;
+}
+body {
+    background-color: hsl(185, 41%, 84%);
+}
+.app {
+    margin: 0 auto;
+    background-color: hsl(185, 41%, 84%);
+    border-radius: 30px;
+    height: 1;
+}
+header {
+    text-align: center;
+    width: 100%;
+    flex-direction: column;
+    padding: 30px;
+}
+header > span {
+    font-weight: 700;
+    font-size: 2rem;
+    display: block;
+    letter-spacing: 10px;
+    color: hsl(186, 14%, 43%);
+}
+main {
+    padding: 35px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.input-main-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 100%;
+}
+.input-main-container-label {
+    font-weight: 700;
+    color: hsl(184, 14%, 56%);
+}
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: hsl(189, 47%, 97%);
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.input-container img {
+    height: 18px;
+}
+.input-container input {
+    background-color: transparent;
+    border: none;
+    width: 90%;
+    font-size: 1.4rem;
+    text-align: right;
+}
+
+/* Tip buttons */
+.tip-btn {
+  padding: 1rem 2rem;
+  border: none;
+  background: #00474b;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+.tip-btn.selected {
+  background: #26c0ab;
+  color: #00474b;
+}
+.options-container {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 20px;
+}
+.tip-options {
+    display: grid;
+    width: 100%;
+    gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+.tip-btn:hover:not(.selected, .custom) {
+    background-color: hsl(172, 54%, 33%);
+    color: white;
+}
+.tip-btn.custom {
+    background-color: hsl(189, 47%, 97%);
+    color: hsl(186, 14%, 43%);
+    font-weight: 700;
+}
+.tip-btn.custom:hover {
+    background-color: hsl(189, 57%, 86%);
+}
+
+.calculator-section-container {
+    background-color: #00474b;
+    padding: 30px 20px 10px 20px;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+.calculator-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.calculator-section-left p{
+    color: white;
+}
+.calculator-section-left span {
+    color: hsl(184, 14%, 56%);
+}
+.tip-amount-number {
+    color: hsl(172, 67%, 45%);
+}
+.reset-btn {
+    background-color: hsl(172, 67%, 45%);
+    width: 100%;
+    padding: 15px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    color: #00474b;
+}
+.reset-btn:hover {
+    background-color: hsl(185, 41%, 84%);
+    cursor: pointer;
+    color: hsl(183, 100%, 15%);
+}
+.custom-tip-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid hsl(184, 14%, 56%);
+    font-size: 1.4rem;
+    color: hsl(184, 14%, 56%);
+    background-color: hsl(189, 47%, 97%);
+    transition: border-color 0.2s;
+}
+@media (min-width: 600px) {
+    .app {
+        width: 95%;
+        padding-top: 0;
+        margin-top: 0;
+    }
+    header {
+        padding-top: 0;
+        margin-top: 0;
+    }
+    header > span {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        height: 100vh;
+        width: 100vw;
+    }
+}
+@media (min-width: 768px) {
+    .app {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .main-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    .calculator-section-container {
+        margin-top: 0;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .calculator-section {
+        margin-bottom: 50px;
+    }
+    .reset-btn {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+/* Extra */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide number input spinners in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.custom-tip-wrapper {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s;
+  margin-top: 0;
+}
+
+.custom-tip-wrapper.show {
+  max-height: 80px; /* enough for the input */
+  opacity: 1;
+  margin-top: 1rem;
+}
