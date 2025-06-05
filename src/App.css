@@ -220,7 +220,6 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Hide number input spinners in Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
 }
@@ -234,7 +233,7 @@ input[type="number"] {
 }
 
 .custom-tip-wrapper.show {
-  max-height: 80px; /* enough for the input */
+  max-height: 80px;
   opacity: 1;
   margin-top: 1rem;
 }

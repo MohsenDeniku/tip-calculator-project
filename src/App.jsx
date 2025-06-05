@@ -6,7 +6,7 @@ const tipOptions = [5, 10, 15, 25, 50];
 
 export default function App() {
   const [selectedTip, setSelectedTip] = useState(null);
-  const [customTip, setCustomTip] = useState(""); // <-- Add this line
+  const [customTip, setCustomTip] = useState(""); 
   const [values, setValues] = useState({});
   const billInputRef = useRef(null);
   const peopleInputRef = useRef(null);
@@ -39,11 +39,12 @@ export default function App() {
   function reset() {
     setValues({});
     setSelectedTip(null);
-    setCustomTip(""); // <-- Reset custom tip
+    setCustomTip(""); 
     billInputRef.current.value = "";
     peopleInputRef.current.value = "";
     billInputRef.current.focus();
   }
+
 
   return (
     <div className="app">
@@ -88,7 +89,6 @@ export default function App() {
                 Custom
               </button>
             </div>
-            {/* Slide-in custom input */}
             <div
               className={`custom-tip-wrapper${
                 selectedTip === "custom" ? " show" : ""
