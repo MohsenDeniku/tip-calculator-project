@@ -205,6 +205,12 @@ main {
         margin-top: 0;
         margin-bottom: 0;
     }
+    .calculator-section-left p, .calculator-section-left span {
+        font-size: 1.4rem;
+    }
+    .tip-amount-number {
+        font-size: 2.2rem;
+    }
 }
 
 /* Extra */
